@@ -24,3 +24,36 @@ instance: Crypt32 = Crypt32("Python")
 
 ---
 
+# Examples🔬
+
+Here are 2 examples on the usages of the class:
+
+```python
+from crypt32 import Crypt32
+
+s: Crypt32 = Crypt32("Hello world") # created instance
+
+s.crypt() # Encrypting text
+
+print(s.decode()) # 'hello world'
+```
+
+---
+
+```python
+from crypt32 import Crypt32
+
+example: Crypt32 = Crypt32("Python") # created an instance
+
+example.crypt() # Encrypted the text
+
+print(f"The word '{example.text}' encrypted: {example}.") # 'The word 'Python' encrypted: πRocofaµRøµaπceØπe.'
+
+example.salt() # salting the text with encrypting it
+
+print(repr(example)) # 'SALT:33d739db75ae9f800e47f0ce16a71a42:πRocofaµRøµaπceØπe'
+
+#Generating salt text
+print(Crypt32.gensalt(length=10)) # 'd75ae9f80e'
+
+```
