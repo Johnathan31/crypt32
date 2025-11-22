@@ -40,12 +40,5 @@ The cipher includes built-in *salt generation* which increases the complexity an
 
 ---
 
-## 📦 Installation
-
-Install by cloning it ftom github
-
-```bash
-git clone https://github.com/Johnathan31/crypt32.git
-cd crypt32
-pip install .
-```
+## 🔢 Instructions
+for instructions & examples, visit  the [instructions page](docs/instructions.md).
