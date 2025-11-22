@@ -1,59 +1,67 @@
-## Crypt32 class Features 🧰
-the available features currently in the class are:
-- Encoding text
-- Decoding encrypted text
-- Generating salt
-- Generating salt text with encrypted text
+# Instructions for crypt32
+
+Welcome to the **crypt32** instruction guide. This document explains how to use `Crypt32` class, how salt works, and gives clear examples for encryption and decryption.
 
 ---
 
-## 🛠️ Instructions
-1. Instanciate the class like this:
-```python
-from crypt32 import Crypt32
+## 1. Prerequisites
 
-instance: Crypt32 = Crypt32("Python")
-# name it as you want
+- Python 3.9+  
+- Install `crypt32` library (or clone the repository)  
+- Basic understanding of strings and encoding  
+
+---
+
+## 2. Installation
+You can install `crypt32` module with the __pip__ tool in the terminal:
+```bash
+pip install crypt32
 ```
 
-2. encrypt it by doing: `instance.crypt()`
-
-3. Or encrypt it with salt: `instance.salt()`
-
-4. Get original text by decoding it with: `instance.decode()` or access original text by `instance.text`
-
----
-
-# Examples🔬
-
-Here are 2 examples on the usages of the class:
-
-```python
-from crypt32 import Crypt32
-
-s: Crypt32 = Crypt32("Hello world") # created instance
-
-s.crypt() # Encrypting text
-
-print(s.decode()) # 'hello world'
+ or by cloning it:
+```bash
+git clone https://gtihub.com/Johnathan31/crypt32.git
+cd crypt32
+pip install .
 ```
 
 ---
 
+## 3. 🛠️ Usage Instructions
+
+1. Initialization
 ```python
 from crypt32 import Crypt32
 
-example: Crypt32 = Crypt32("Python") # created an instance
+ciphered_text = Crypt32("Python")
+```
+2. Generating salt
+```python
 
-example.crypt() # Encrypted the text
+salt = Crypt32.gensalt(length=15) # Generates a 15-character long salt
 
-print(f"The word '{example.text}' encrypted: {example}.") # 'The word 'Python' encrypted: πRocofaµRøµaπceØπe.'
+print("Generated salt: ", salt)
+```
+3. Encryption:
+```python
+# Encryption with salt(Recommended)
 
-example.salt() # salting the text with encrypting it
+ciphered_text.salt()
+print(f"The salt encryption generated for 'Python' is: ", ciphered_text.salted)
 
-print(repr(example)) # 'SALT:33d739db75ae9f800e47f0ce16a71a42:πRocofaµRøµaπceØπe'
+# Encryption only(Not recommended for security, but possible)
 
-#Generating salt text
-print(Crypt32.gensalt(length=10)) # 'd75ae9f80e'
+ciphered_text.crypt()
+print("The encryption for 'Python' is:", ciphered_text)
 
 ```
+4. Decryption
+```python
+# By using the decrypt() attribute
+print(f"The word {ciphered_text} decrypted is: ", ciphered_text.decrypt())
+
+#or by accessing the original text
+print(f"the original text of {ciphered_text} is '{ciphered_text.text}'")
+```
+
+---
