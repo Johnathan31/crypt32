@@ -9,7 +9,6 @@ Welcome to the **crypt32** instruction guide. This document explains how to use 
 - Python 3.9+  
 - Install `crypt32` library (or clone the repository)  
 - Basic understanding of strings, encoding & classes
-- 
 
 ---
 
@@ -88,4 +87,5 @@ You should do the self.salt() fucntion thus it gets the value
 
 
 ---
+
 
