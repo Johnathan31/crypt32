@@ -1,9 +1,51 @@
-# 🧩Overview
-crypt32 is a **Homophonic Substitutional cipher**, which can be used for some secret messages, or encrypting some files.
+<h1 align="center">crypt32</h1>
 
-⚠️**But** for security reasons, this cipher can't be used for sensitive informations or data, as it is not a `Modern Crypto`, so it can — with some effort — be decoded easily.
+<p align="center">
+  <strong>A lightweight, pattern-resistant substitution cipher for Python.</strong><br>
+  Designed for experimentation, education, and creating unpredictable encrypted text.
+</p>
 
-# Crypt32 class
-Crypt32 class is the class that helps you to encrypt to this cipher, where you can encode, decode, generate salt, generate the encrypted text & salt together. For the instructions for usage & examples, visit [this](docs/instructions.md) link.
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.9%2B-blue.svg" />
+  <img src="https://img.shields.io/badge/status-active-success.svg" />
+  <img src="https://img.shields.io/badge/license-MIT-green.svg" />
+</p>
 
-For full documentation visit: [docs]()
+---
+
+## 🔐 Overview
+
+**crypt32** is a custom substitution-based cipher focused on producing highly unpredictable output.  
+It is *not* designed to replace modern cryptography, but rather to serve as:
+
+- A practical cryptography exercise  
+- A lightweight cipher for creative or non-sensitive applications  
+- A demonstration of unpredictable substitutions and salt-based variation  
+
+The cipher includes built-in *salt generation* which increases the complexity and makes outputs harder to guess or pattern-match.
+
+> ⚠️ **Security Warning**  
+> This library is **not a modern secure cipher** and should **not** be used to protect confidential or critical data.
+
+---
+
+## ✨ Features
+
+- 🔁 Encrypt & decrypt Latin text  
+- 🧂 Built-in random salt generation  
+- 🌀 Pattern-resistant output  
+- 🧩 Simple and clean Python API  
+- 🎯 Lightweight and dependency-free  
+- 📂 Fully open source
+
+---
+
+## 📦 Installation
+
+Install by cloning it ftom github
+
+```bash
+git clone https://github.com/Johnathan31/crypt32.git
+cd crypt32
+pip install .
+```
